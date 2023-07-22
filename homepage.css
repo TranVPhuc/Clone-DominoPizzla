@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.homepage-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #004666;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+}
+
+#homepage-image{
+    width: 250px;
+    height: 38px;
+    margin-left: 10px; 
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.nav-item{
+    list-style-type: none;
+    display: inline-block;
+}
+
+.nav-item:hover 
+{
+
+    background-color: #00628f;
+}
+
+.item{
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    line-height: 80px;
+}
+
+
+.opiton{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.language{
+    width: 32px;
+    height: 16px;
+}
