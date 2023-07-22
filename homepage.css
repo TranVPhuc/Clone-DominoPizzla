@@ -20,14 +20,6 @@
     margin-left: 10px; 
 }
 
-.navbar{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    height: 100%;
-}
-
 .nav-item{
     list-style-type: none;
     display: inline-block;
@@ -35,7 +27,6 @@
 
 .nav-item:hover 
 {
-
     background-color: #00628f;
 }
 
@@ -44,13 +35,34 @@
     font-weight: bold;
     color: #fff;
     line-height: 80px;
+    font-size: 0.95rem;
+    padding: 0 15px;
 }
 
+.option-item{
+    display: inline-block;
+    list-style-type: none;
+}
 
-.opiton{
+.item1{
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.user,
+.cart{
+    display: flex;
+    align-items: center;
     justify-content: space-between;
+    font-size: 2rem;
+    color: #fff;
+    margin: 0px 15px;
+}
+
+.option-item:hover{
+    background-color: #00628f;
 }
 
 .language{
