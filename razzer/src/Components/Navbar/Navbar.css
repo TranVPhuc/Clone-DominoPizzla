@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    background-color: #000 !important;
+    border-bottom: 2px solid #47bd34;
+    
+}
+
+.web-brand{
+    width: 2rem;
+    height: 2rem;
+}
+
+.navbar-item{
+    text-decoration: none;
+    color: gray;
+    font-weight: 500;
+}
+
+.navbar-item:hover{
+    color: #fff;
+}
+
+.search,
+.cart{
+    color: gray;
+    font-size: 1.3rem;
+}
+
+.search:hover,
+.cart:hover{
+    color: #fff;
+}
+
+.promotion{
+    height: 2.7rem;
+    background-color: #555555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.85rem;
+}

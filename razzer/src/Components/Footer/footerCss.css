@@ -1,0 +1,84 @@
+.icon{
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.footerItem{
+    list-style-type: none;
+    font-size: 0.90rem;
+    margin-bottom:10px;
+}
+
+.link{
+    text-decoration: none;
+    color:#999;
+}
+.link:hover{
+    text-decoration: underline;
+    color: #fff;
+}
+
+.copyright{
+    color: #999;
+    font-size: 0.90rem;
+    margin-left: 7rem;
+}
+
+.line::before{
+    color: #999;
+    content: '|';
+    padding: 10px 10px;
+    font-size: 15px;
+}
+
+.subFooter2{
+    display:flex;
+    background-color:#111;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 10rem;
+}
+
+.subFooter2-1{
+    display:flex;
+    background-color:#111;
+}
+
+.subFooter2-2{
+    display:flex;
+}
+
+.line{
+    font-size: 0.90rem;
+    text-decoration: none;
+    color: #999;
+
+}
+
+.line:hover{
+    text-decoration: underline;
+    color: #fff;
+}
+
+.countryName{
+    color: #fff;
+    font-size: 0.90rem;
+}
+
+.changeLocation{
+    font-size: 0.90rem;
+    text-decoration: none;
+    color: #999;
+}
+
+.changeLocation:before{
+    color: #999;
+    content: '|';
+    padding: 10px 10px;
+    font-size: 15px;
+}
+
+.changeLocation:hover{
+    text-decoration: underline;
+    color: #fff;
+}
