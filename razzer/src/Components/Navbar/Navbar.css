@@ -6,7 +6,7 @@
 .navbar{
     background-color: #000 !important;
     border-bottom: 2px solid #47bd34;
-    
+    position: sticky;
 }
 
 .web-brand{
