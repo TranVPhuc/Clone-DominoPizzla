@@ -12,6 +12,20 @@ import {
 } from "firebase/auth";
 import { getFirestore, addDoc, collection } from "firebase/firestore";
 import { auth, db } from '../../firebase/FirebaseConfig';
+import React from 'react';
+import {Route, Routes, Link} from 'react-router-dom'
+import './Navbar.css';
+import logoWeb from './razer-logo.svg';
+import './fontawesome-free-6.4.0-web/css/all.min.css';
+import Store from '../Store/Store'
+import PC from '../PC/PC'
+import Console from '../Console/Console';
+import Mobile from '../Mobile/Mobile';
+import Lifestyle from '../Lifestyle/Lifestyle';
+import Services from '../Services/Services';
+import Community from '../Community/Community';
+import Support from '../Support/Support';
+import Homepage from '../Hompage/Homepage'
 
 const Navbar = () => {
   const content = (
@@ -139,7 +153,4 @@ const Navbar = () => {
       </div>
     </div>
 
-  )
-}
-
-export default Navbar
+export default Navbar;
