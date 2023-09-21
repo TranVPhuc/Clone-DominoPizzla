@@ -1,0 +1,7 @@
+.ant-layout.ant-layout-has-sider {
+  height: 100vh;
+}
+
+aside.ant-layout-sider.ant-layout-sider-dark {
+  background: #fff;
+}

@@ -1,0 +1,14 @@
+.subnav-item:hover
+{
+  color: #44d62c !important;
+
+}
+
+.title{
+border-bottom: 1px solid #44d32c;
+}
+
+.banner2{
+    background-image: url("./bannerimg7.jpg");
+    background-size: cover ;
+}

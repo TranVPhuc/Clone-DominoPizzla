@@ -1,0 +1,14 @@
+.cataCard{
+    border: none !important;
+    border-bottom: 1px solid #44d62c !important;
+}
+
+.moreInfo:hover{
+    text-decoration: underline;
+    color: #44d62c !important;
+}
+
+.cardInfo{
+    text-decoration:none;
+}
+

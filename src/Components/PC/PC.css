@@ -1,0 +1,12 @@
+.subnavItem:hover{
+    color: #44d62c !important;
+}
+
+.moreinfo:hover{
+    color: #44d62c !important;
+}
+
+.banner2{
+    background-image: url("./PC-page-img/bannerimg2.jpg");
+    background-size: cover ;
+}
