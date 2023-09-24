@@ -1,5 +1,10 @@
-import React from 'react'
+import React from 'react';
 import LaptopCard from '../Laptop/LaptopCard';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Navigation } from 'swiper/modules';
+import './Swiper.css';
 
 const Contentcreation = () => {
   return (
@@ -14,55 +19,73 @@ const Contentcreation = () => {
       </div>
 
       <div className="flex flex-row justify-start ml-[6rem]">
-        <LaptopCard
-          nameLaptop={'Razer Kraken Kitty V2 Pro - Black'}
-          laptopComponent={'Wired RGB Headset with Interchangeable Ears'}
-          price={'399.99'}
-          imageProducts={[
-            {
-              src: '/images/content-page-img/headset1.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Kraken Kitty V2 - Quartz'}
-          laptopComponent={'Wired RGB Headset with Kitty Ears'}
-          price={'399.99'}
-          itemNew={'NEW'}
-          imageProducts={[
-            {
-              src: '/images/content-page-img/headset2.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Kraken Kitty V2 BT'}
-          laptopComponent={'Wireless Bluetooth RGB Headset with Kitty Ears'}
-          price={'399.99'}
-          itemNew={'NEW'}
-          imageProducts={[
-            {
-              src: '/images/content-page-img/headset3.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Kraken Kitty - Black'}
-          laptopComponent={'Razer Kitty Ear USB Headset with Chroma'}
-          price={'399.99'}
-          imageProducts={[
-            {
-              src: '/images/content-page-img/headset4.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={0}
+          navigation={{
+            enabled: true,
+          }}
+          modules={[Navigation]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            <LaptopCard
+              nameLaptop={['Razer Kraken Kitty V2 Pro - Black']}
+              laptopComponent={'Wired RGB Headset with Interchangeable Ears'}
+              price={'399.99'}
+              imageProducts={[
+                {
+                  src: '/images/content-page-img/headset1.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Kraken Kitty V2 - Quartz']}
+              laptopComponent={'Wired RGB Headset with Kitty Ears'}
+              price={'399.99'}
+              itemNew={'NEW'}
+              imageProducts={[
+                {
+                  src: '/images/content-page-img/headset2.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Kraken Kitty V2 BT']}
+              laptopComponent={'Wireless Bluetooth RGB Headset with Kitty Ears'}
+              price={'399.99'}
+              itemNew={'NEW'}
+              imageProducts={[
+                {
+                  src: '/images/content-page-img/headset3.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Kraken Kitty - Black']}
+              laptopComponent={'Razer Kitty Ear USB Headset with Chroma'}
+              price={'399.99'}
+              imageProducts={[
+                {
+                  src: '/images/content-page-img/headset4.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+        </Swiper>
       </div>
 
       <div className="ml-[6rem] mt-[3rem] mb-[3rem]">
@@ -73,53 +96,71 @@ const Contentcreation = () => {
       </div>
 
       <div className="flex flex-row justify-start ml-[6rem]">
-        <LaptopCard
-          nameLaptop={'Razer Kitty Ears V2 - Quartz'}
-          laptopComponent={'Clip-On Kitty Cat Ear Headset Attachment'}
-          price={'399.99'}
-          imageProducts={[
-            {
-              src: '/images/content-page-img/streamacc1.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Blue Screen'}
-          laptopComponent={'Collapsible Chroma Key Backdrop for Streaming'}
-          price={'399.99'}
-          imageProducts={[
-            {
-              src: '/images/content-page-img/streamacc2.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Stream Controller'}
-          laptopComponent={'All-in-one Control Deck for Streaming'}
-          price={'399.99'}
-          imageProducts={[
-            {
-              src: '/images/content-page-img/streamacc3.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Stream Controller X'}
-          laptopComponent={'All-in-one Controller for Streaming'}
-          price={'399.99'}
-          imageProducts={[
-            {
-              src: '/images/content-page-img/streamacc4.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={0}
+          navigation={{
+            enabled: true,
+          }}
+          modules={[Navigation]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Kitty Ears V2 - Quartz']}
+              laptopComponent={'Clip-On Kitty Cat Ear Headset Attachment'}
+              price={'399.99'}
+              imageProducts={[
+                {
+                  src: '/images/content-page-img/streamacc1.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Blue Screen']}
+              laptopComponent={'Collapsible Chroma Key Backdrop for Streaming'}
+              price={'399.99'}
+              imageProducts={[
+                {
+                  src: '/images/content-page-img/streamacc2.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Stream Controller']}
+              laptopComponent={'All-in-one Control Deck for Streaming'}
+              price={'399.99'}
+              imageProducts={[
+                {
+                  src: '/images/content-page-img/streamacc3.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <LaptopCard
+              nameLaptop={['Razer Stream Controller X']}
+              laptopComponent={'All-in-one Controller for Streaming'}
+              price={'399.99'}
+              imageProducts={[
+                {
+                  src: '/images/content-page-img/streamacc4.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+        </Swiper>
       </div>
 
       <div className="ml-[6rem] mt-[3rem] mb-[3rem]">
@@ -130,17 +171,29 @@ const Contentcreation = () => {
       </div>
 
       <div className="flex flex-row justify-start ml-[6rem]">
-        <LaptopCard
-          nameLaptop={'Razer DeathStalker V2 Pro'}
-          laptopComponent={'Wireless Low-Profile RGB Optical Gaming Keyboard'}
-          price={'399.99'}
-          imageProducts={[
-            {
-              src: '/images/content-page-img/inear.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={0}
+          navigation={{
+            enabled: true,
+          }}
+          modules={[Navigation]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            <LaptopCard
+              nameLaptop={['Razer DeathStalker V2 Pro']}
+              laptopComponent={'Wireless Low-Profile RGB Optical Gaming Keyboard'}
+              price={'399.99'}
+              imageProducts={[
+                {
+                  src: '/images/content-page-img/inear.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+        </Swiper>
       </div>
 
       <div className="ml-[6rem] mt-[3rem] mb-[3rem]">
@@ -149,53 +202,71 @@ const Contentcreation = () => {
       </div>
 
       <div className="flex flex-row justify-start ml-[6rem]">
-        <LaptopCard
-          nameLaptop={'Razer DeathStalker V2 Pro'}
-          laptopComponent={'Wireless Low-Profile RGB Optical Gaming Keyboard'}
-          price={'399.99'}
-          imageProducts={[
-            {
-              src: '/images/content-page-img/webcam1.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer DeathStalker V2 Pro Tenkeyless'}
-          laptopComponent={'Optical Gaming Keyboard with Near-zero Input Latency'}
-          price={'399.99'}
-          imageProducts={[
-            {
-              src: '/images/content-page-img/webcam2.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer DeathStalker V2'}
-          laptopComponent={'Low-Profile RGB Optical Gaming Keyboard'}
-          price={'399.99'}
-          imageProducts={[
-            {
-              src: '/images/content-page-img/webcam3.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer DeathStalker V2'}
-          laptopComponent={'Low-Profile RGB Optical Gaming Keyboard'}
-          price={'399.99'}
-          imageProducts={[
-            {
-              src: '/images/content-page-img/webcam4.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={0}
+          navigation={{
+            enabled: true,
+          }}
+          modules={[Navigation]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer DeathStalker V2 Pro']}
+              laptopComponent={'Wireless Low-Profile RGB Optical Gaming Keyboard'}
+              price={'399.99'}
+              imageProducts={[
+                {
+                  src: '/images/content-page-img/webcam1.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer DeathStalker V2 Pro Tenkeyless']}
+              laptopComponent={'Optical Gaming Keyboard with Near-zero Input Latency'}
+              price={'399.99'}
+              imageProducts={[
+                {
+                  src: '/images/content-page-img/webcam2.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <LaptopCard
+              nameLaptop={['Razer DeathStalker V2']}
+              laptopComponent={'Low-Profile RGB Optical Gaming Keyboard'}
+              price={'399.99'}
+              imageProducts={[
+                {
+                  src: '/images/content-page-img/webcam3.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer DeathStalker V2']}
+              laptopComponent={'Low-Profile RGB Optical Gaming Keyboard'}
+              price={'399.99'}
+              imageProducts={[
+                {
+                  src: '/images/content-page-img/webcam4.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+        </Swiper>
       </div>
 
       <div className="ml-[6rem] mt-[3rem] mb-[3rem]">
@@ -206,56 +277,74 @@ const Contentcreation = () => {
       </div>
 
       <div className="flex flex-row justify-start ml-[6rem]">
-        <LaptopCard
-          nameLaptop={'Razer DeathStalker V2 Pro'}
-          laptopComponent={'Wireless Low-Profile RGB Optical Gaming Keyboard'}
-          price={'399.99'}
-          imageProducts={[
-            {
-              src: '/images/content-page-img/mic1.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer DeathStalker V2 Pro Tenkeyless'}
-          laptopComponent={'Optical Gaming Keyboard with Near-zero Input Latency'}
-          price={'399.99'}
-          imageProducts={[
-            {
-              src: '/images/content-page-img/mic2.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer DeathStalker V2'}
-          laptopComponent={'Low-Profile RGB Optical Gaming Keyboard'}
-          price={'399.99'}
-          imageProducts={[
-            {
-              src: '/images/content-page-img/mic3.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer DeathStalker V2'}
-          laptopComponent={'Low-Profile RGB Optical Gaming Keyboard'}
-          price={'399.99'}
-          imageProducts={[
-            {
-              src: '/images/content-page-img/mic4.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={0}
+          navigation={{
+            enabled: true,
+          }}
+          modules={[Navigation]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer DeathStalker V2 Pro']}
+              laptopComponent={'Wireless Low-Profile RGB Optical Gaming Keyboard'}
+              price={'399.99'}
+              imageProducts={[
+                {
+                  src: '/images/content-page-img/mic1.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer DeathStalker V2 Pro Tenkeyless']}
+              laptopComponent={'Optical Gaming Keyboard with Near-zero Input Latency'}
+              price={'399.99'}
+              imageProducts={[
+                {
+                  src: '/images/content-page-img/mic2.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer DeathStalker V2']}
+              laptopComponent={'Low-Profile RGB Optical Gaming Keyboard'}
+              price={'399.99'}
+              imageProducts={[
+                {
+                  src: '/images/content-page-img/mic3.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <LaptopCard
+              nameLaptop={['Razer DeathStalker V2']}
+              laptopComponent={'Low-Profile RGB Optical Gaming Keyboard'}
+              price={'399.99'}
+              imageProducts={[
+                {
+                  src: '/images/content-page-img/mic4.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+        </Swiper>
       </div>
     </div>
   );
-}
+};
 
-export default Contentcreation
+export default Contentcreation;

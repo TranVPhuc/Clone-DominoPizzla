@@ -11,7 +11,9 @@ import Console from './Console/Console'
 import Mobile from './Mobile/Mobile'
 import Apprarel from './Apparel/Apparel'
 import './Store.css'
-
+import LaptopCard from './Laptop/LaptopCard'
+import Carousel from 'react-bootstrap/Carousel';
+import { CarouselItem } from 'react-bootstrap'
 const Store = () => {
     return (
       <>
@@ -84,8 +86,9 @@ const Store = () => {
             </ul>
           </div>
         </div>
-
+ 
         <Routes>
+          <Route path='/*' element={<Laptop/>}/>
           <Route path="/laptops" element={<Laptop />} />
           <Route path="/components" element={<Component />} />
           <Route path="/mice" element={<Mice />} />

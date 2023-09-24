@@ -1,6 +1,11 @@
-import React from 'react'
+import React from 'react';
 import LaptopCard from '../Laptop/LaptopCard';
 import Carousel from 'react-bootstrap/Carousel';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Navigation } from 'swiper/modules';
+import './Swiper.css';
 
 const Chairs = () => {
   return (
@@ -17,58 +22,76 @@ const Chairs = () => {
         </p>
       </div>
       <div className="flex flex-row justify-start ml-[6rem]">
-        <LaptopCard
-          nameLaptop={'Razer Enki Pro - Automobili Lamborghini Edition'}
-          laptopComponent={'Premium Gaming Chair with Alcantara® Leather for All-Day Comfort'}
-          price={'1,299.00'}
-          exclusive={'EXCLUSIVE'}
-          imageProducts={[
-            {
-              src: '/images/chair-page-img/collab1.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Enki Pro - Koenigsegg Edition'}
-          laptopComponent={'Premium Gaming Chair with Alcantara® Leather for All-Day Comfort'}
-          price={'329.99'}
-          exclusive={'EXCLUSIVE'}
-          imageProducts={[
-            {
-              src: '/images/chair-page-img/collab2.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Enki Pro - Williams Esports Edition'}
-          laptopComponent={'Premium Gaming Chair with Alcantara® Leather for All-Day Comfort'}
-          price={'999.00'}
-          salePrice={'1,299.00'}
-          salePercentage={'23'}
-          imageProducts={[
-            {
-              src: '/images/chair-page-img/collab3.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer x *A Bathing Ape® Iskur X'}
-          laptopComponent={'Ergonomic Gaming Chair'}
-          price={'329.99'}
-          exclusive={'EXCLUSIVE'}
-          imageProducts={[
-            {
-              src: '/images/chair-page-img/collab4.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={0}
+          navigation={{
+            enabled: true,
+          }}
+          modules={[Navigation]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            <LaptopCard
+              nameLaptop={['Razer Enki Pro - Automobili Lamborghini Edition']}
+              laptopComponent={'Premium Gaming Chair with Alcantara® Leather for All-Day Comfort'}
+              price={'1,299.00'}
+              exclusive={'EXCLUSIVE'}
+              imageProducts={[
+                {
+                  src: '/images/chair-page-img/collab1.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Enki Pro - Koenigsegg Edition']}
+              laptopComponent={'Premium Gaming Chair with Alcantara® Leather for All-Day Comfort'}
+              price={'329.99'}
+              exclusive={'EXCLUSIVE'}
+              imageProducts={[
+                {
+                  src: '/images/chair-page-img/collab2.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Enki Pro - Williams Esports Edition']}
+              laptopComponent={'Premium Gaming Chair with Alcantara® Leather for All-Day Comfort'}
+              price={'999.00'}
+              salePrice={'1,299.00'}
+              salePercentage={'23'}
+              imageProducts={[
+                {
+                  src: '/images/chair-page-img/collab3.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer x *A Bathing Ape® Iskur X']}
+              laptopComponent={'Ergonomic Gaming Chair'}
+              price={'329.99'}
+              exclusive={'EXCLUSIVE'}
+              imageProducts={[
+                {
+                  src: '/images/chair-page-img/collab4.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+        </Swiper>
       </div>
 
       <div className="ml-[6rem]">
@@ -76,53 +99,71 @@ const Chairs = () => {
         <p className="text-[#777] font-semibold text-xl">Gaming chairs optimized for all-day gaming comfort </p>
       </div>
       <div className="flex flex-row justify-start ml-[6rem]">
-        <LaptopCard
-          nameLaptop={'Razer Enki Pro'}
-          laptopComponent={'Premium Gaming Chair with Alcantara® Leather for All-Day Comfort'}
-          price={'1,299.00'}
-          imageProducts={[
-            {
-              src: '/images/chair-page-img/razerenki1.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={0}
+          navigation={{
+            enabled: true,
+          }}
+          modules={[Navigation]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            <LaptopCard
+              nameLaptop={['Razer Enki Pro']}
+              laptopComponent={'Premium Gaming Chair with Alcantara® Leather for All-Day Comfort'}
+              price={'1,299.00'}
+              imageProducts={[
+                {
+                  src: '/images/chair-page-img/razerenki1.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
 
-        <LaptopCard
-          nameLaptop={'Razer Enki - Green'}
-          laptopComponent={'Gaming Chair for All-Day Comfort'}
-          price={'329.99'}
-          imageProducts={[
-            {
-              src: '/images/chair-page-img/razerenki2.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Enki - Black'}
-          laptopComponent={'Gaming Chair for All-Day Comfort'}
-          price={'999.00'}
-          imageProducts={[
-            {
-              src: '/images/chair-page-img/razerenki3.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Enki - Quartz'}
-          laptopComponent={'Gaming Chair for All-Day Comfort'}
-          price={'329.99'}
-          imageProducts={[
-            {
-              src: '/images/chair-page-img/razerenki4.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Enki - Green']}
+              laptopComponent={'Gaming Chair for All-Day Comfort'}
+              price={'329.99'}
+              imageProducts={[
+                {
+                  src: '/images/chair-page-img/razerenki2.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <LaptopCard
+              nameLaptop={['Razer Enki - Black']}
+              laptopComponent={'Gaming Chair for All-Day Comfort'}
+              price={'999.00'}
+              imageProducts={[
+                {
+                  src: '/images/chair-page-img/razerenki3.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Enki - Quartz']}
+              laptopComponent={'Gaming Chair for All-Day Comfort'}
+              price={'329.99'}
+              imageProducts={[
+                {
+                  src: '/images/chair-page-img/razerenki4.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+        </Swiper>
       </div>
 
       <div className="mt-[15px]">
@@ -164,53 +205,72 @@ const Chairs = () => {
         <p className="text-[#777] font-semibold text-xl">Gaming chairs optimized for all-day gaming comfort </p>
       </div>
       <div className="flex flex-row justify-start ml-[6rem]">
-        <LaptopCard
-          nameLaptop={'Razer Iskur - Black - XL'}
-          laptopComponent={'Gaming Chair with Built-in Lumbar Support'}
-          price={'1,299.00'}
-          imageProducts={[
-            {
-              src: '/images/chair-page-img/razeriskur1.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Iskur - Black / Green - XL'}
-          laptopComponent={'Gaming Chair with Built-in Lumbar Support'}
-          price={'329.99'}
-          imageProducts={[
-            {
-              src: '/images/chair-page-img/razeriskur2.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Iskur - Dark Gray Fabric - XL'}
-          laptopComponent={'Gaming Chair with Built-in Lumbar Support'}
-          price={'999.00'}
-          imageProducts={[
-            {
-              src: '/images/chair-page-img/razeriskur3.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Iskur - Black'}
-          laptopComponent={'Gaming Chair with Built-in Lumbar Support'}
-          price={'329.99'}
-          imageProducts={[
-            {
-              src: '/images/chair-page-img/razeriskur4.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={0}
+          navigation={{
+            enabled: true,
+          }}
+          modules={[Navigation]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Iskur - Black - XL']}
+              laptopComponent={'Gaming Chair with Built-in Lumbar Support'}
+              price={'1,299.00'}
+              imageProducts={[
+                {
+                  src: '/images/chair-page-img/razeriskur1.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Iskur - Black / Green - XL']}
+              laptopComponent={'Gaming Chair with Built-in Lumbar Support'}
+              price={'329.99'}
+              imageProducts={[
+                {
+                  src: '/images/chair-page-img/razeriskur2.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Iskur - Dark Gray Fabric - XL']}
+              laptopComponent={'Gaming Chair with Built-in Lumbar Support'}
+              price={'999.00'}
+              imageProducts={[
+                {
+                  src: '/images/chair-page-img/razeriskur3.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Iskur - Black']}
+              laptopComponent={'Gaming Chair with Built-in Lumbar Support'}
+              price={'329.99'}
+              imageProducts={[
+                {
+                  src: '/images/chair-page-img/razeriskur4.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+        </Swiper>
       </div>
 
       <div className="ml-[6rem] mt-[2rem]">
@@ -218,58 +278,74 @@ const Chairs = () => {
         <p className="text-[#777] font-semibold text-xl">Head and lumbar cushions, rugs and mats, chair studs </p>
       </div>
       <div className="flex flex-row justify-start ml-[6rem]">
-        <LaptopCard
-          nameLaptop={'Team Razer Floor Mat'}
-          laptopComponent={'Room and gaming chair accessory for esports'}
-          price={'1,299.00'}
-          imageProducts={[
-            {
-              src: '/images/chair-page-img/acc1.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Team Razer Floor Rug - Quartz'}
-          laptopComponent={'Room and Gaming Chair Accessory for Esports'}
-          price={'329.99'}
-          exclusive={'EXCLUSIVE'}
-          imageProducts={[
-            {
-              src: '/images/chair-page-img/acc2.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Sneki Snek Floor Rug'}
-          laptopComponent={'Room and Gaming Chair Accessory'}
-          price={'999.00'}
-          exclusive={'EXCLUSIVE'}
-          imageProducts={[
-            {
-              src: '/images/chair-page-img/acc3.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Head Cushion - Quartz'}
-          laptopComponent={'Neck & Head support for Gaming Chairs'}
-          price={'329.99'}
-          imageProducts={[
-            {
-              src: '/images/chair-page-img/acc4.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={0}
+          navigation={{
+            enabled: true,
+          }}
+          modules={[Navigation]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            <LaptopCard
+              nameLaptop={['Team Razer Floor Mat']}
+              laptopComponent={'Room and gaming chair accessory for esports'}
+              price={'1,299.00'}
+              imageProducts={[
+                {
+                  src: '/images/chair-page-img/acc1.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <LaptopCard
+              nameLaptop={['Team Razer Floor Rug - Quartz']}
+              laptopComponent={'Room and Gaming Chair Accessory for Esports'}
+              price={'329.99'}
+              exclusive={'EXCLUSIVE'}
+              imageProducts={[
+                {
+                  src: '/images/chair-page-img/acc2.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Sneki Snek Floor Rug']}
+              laptopComponent={'Room and Gaming Chair Accessory'}
+              price={'999.00'}
+              exclusive={'EXCLUSIVE'}
+              imageProducts={[
+                {
+                  src: '/images/chair-page-img/acc3.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <LaptopCard
+              nameLaptop={['Razer Head Cushion - Quartz']}
+              laptopComponent={'Neck & Head support for Gaming Chairs'}
+              price={'329.99'}
+              imageProducts={[
+                {
+                  src: '/images/chair-page-img/acc4.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+        </Swiper>
       </div>
     </div>
   );
-}
+};
 
-export default Chairs
+export default Chairs;

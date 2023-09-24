@@ -69,7 +69,7 @@ const Console = () => {
         <MyVideoComponent />
       </div>
 
-      <div className="w-[75%] pt-[20px] pb-[30px] ml-[16rem]">
+      <div className="w-[75%] pt-[20px] pb-[30px] ml-[13rem]">
         <Row className="" gutter={16}>
           <Col className="gutter-row" span={8}>
             <CategoryCard
@@ -110,7 +110,7 @@ const Console = () => {
 
       <div className="relative title">
         <img src="/images/console-main-img/bannerimg3.jpg" />
-        <div className="absolute flex flex-col items-center top-[10%] left-[33%]">
+        <div className="absolute flex flex-col items-center top-[5%] left-[27%]">
           <h1 className="text-white font-light">SONIC THE HEDGEHOG LIMITED EDITION</h1>
           <p className="text-[#777] text-lg">Officially Licensed Xbox Controller and Quick Charging Stand</p>
           <a className="no-underline text-[#44d62c] hover:underline hover:text-[#44d62c]" href="#">
@@ -119,8 +119,8 @@ const Console = () => {
         </div>
       </div>
 
-      <div className="w-[75%] pt-[20px] pb-[30px] ml-[32rem]">
-        <Row className="" gutter={16}>
+      <div className="w-[75%] pt-[20px] pb-[30px] overflow-hidden">
+        <Row className="w-full rowItem" gutter={16}>
           <Col className="gutter-row" span={8}>
             <CategoryCard
               cardSrc={'/images/console-main-img/cataimg4.jpg'}

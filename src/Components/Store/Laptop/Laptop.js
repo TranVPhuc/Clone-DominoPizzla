@@ -1,11 +1,16 @@
 import React from 'react';
 import LaptopCard from './LaptopCard';
 import Carousel from 'react-bootstrap/Carousel';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Navigation } from 'swiper/modules';
+import './Swiper.css';
 
 const Laptop = () => {
   return (
     <div className="bg-black mt-[-16px] pb-[25px]">
-      <div className="ml-12">
+      <div className="ml-[6rem]">
         <h1 className="font-bold text-[#44d62c]">GAMING LAPTOPS</h1>
         <p className="text-[#777] font-semibold text-xl">
           The most portable and powerful laptops for gamers, creators, and professionals
@@ -15,65 +20,84 @@ const Laptop = () => {
           Discover our newest Razer Blades featuring the latest NVIDIA graphics cards, Intel, and AMD processors
         </p>
       </div>
+
       {/* GTX 40 series */}
-      <div className="flex flex-row justify-evenly">
-        <LaptopCard
-          nameLaptop={'Razer Blade 14 Models '}
-          laptopComponent={'NVIDIA® GeForce RTX™ 40 Series 14” Laptop with AMD Ryzen 9 7940HS Processor'}
-          colorOption={'Now available in a sleek mercury or matte black finish.'}
-          imageProducts={[
-            {
-              src: '/images/images-product/laptopimg1.png',
-              alt: 'product 1',
-            },
-          ]}
-          price={'2,399.99'}
-        />
+      <div className="flex flex-row justify-start ml-[6rem]">
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={0}
+          navigation={{
+            enabled: true,
+          }}
+          modules={[Navigation]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            <LaptopCard
+              nameLaptop={['Razer Blade 14 Models ']}
+              laptopComponent={'NVIDIA® GeForce RTX™ 40 Series 14” Laptop with AMD Ryzen 9 7940HS Processor'}
+              colorOption={''}
+              imageProducts={[
+                {
+                  src: '/images/images-product/laptopimg1.png',
+                  alt: 'product 1',
+                },
+              ]}
+              price={'2,399.99'}
+            />
+          </SwiperSlide>
 
-        <LaptopCard
-          nameLaptop={'Razer Blade 15 Models '}
-          laptopComponent={
-            'NVIDIA® GeForce RTX™ 40 Series 15” Laptop with 13th Gen Intel® Core™ i7 Processor (14-Core)'
-          }
-          colorOption={'Now available in a sleek mercury or matte black finish.'}
-          imageProducts={[
-            {
-              src: '/images/images-product/laptopimg2.png',
-              alt: 'product 2',
-            },
-          ]}
-          price={'2,499.99'}
-        />
+          <SwiperSlide>
+            <LaptopCard
+              nameLaptop={['Razer Blade 15 Models ']}
+              laptopComponent={
+                'NVIDIA® GeForce RTX™ 40 Series 15” Laptop with 13th Gen Intel® Core™ i7 Processor (14-Core)'
+              }
+              colorOption={'Now available in a sleek mercury or matte black finish.'}
+              imageProducts={[
+                {
+                  src: '/images/images-product/laptopimg2.png',
+                  alt: 'product 2',
+                },
+              ]}
+              price={'2,499.99'}
+            />
+          </SwiperSlide>
 
-        <LaptopCard
-          nameLaptop={'Razer Blade 16 Models '}
-          laptopComponent={
-            'NVIDIA® GeForce RTX™ 40 Series 16” Laptop with 13th Gen Intel® Core™ i9 Processor (24-Core)'
-          }
-          colorOption={'Now available in a sleek mercury or matte black finish.'}
-          imageProducts={[
-            {
-              src: '/images/images-product/laptopimg3.png',
-              alt: 'product 3',
-            },
-          ]}
-          price={'2,699.99'}
-        />
+          <SwiperSlide>
+            <LaptopCard
+              nameLaptop={['Razer Blade 16 Models ']}
+              laptopComponent={
+                'NVIDIA® GeForce RTX™ 40 Series 16” Laptop with 13th Gen Intel® Core™ i9 Processor (24-Core)'
+              }
+              colorOption={'Now available in a sleek mercury or matte black finish.'}
+              imageProducts={[
+                {
+                  src: '/images/images-product/laptopimg3.png',
+                  alt: 'product 3',
+                },
+              ]}
+              price={'2,699.99'}
+            />
+          </SwiperSlide>
 
-        <LaptopCard
-          nameLaptop={'Razer Blade 18 Models '}
-          laptopComponent={
-            'NVIDIA® GeForce RTX™ 40 Series 18” Laptop with 13th Gen Intel® Core™ i9 Processor (24-Core)'
-          }
-          colorOption={'Now available in a sleek mercury or matte black finish.'}
-          imageProducts={[
-            {
-              src: '/images/images-product/laptopimg4.png',
-              alt: 'product 4',
-            },
-          ]}
-          price={'2,899.99'}
-        />
+          <SwiperSlide>
+            <LaptopCard
+              nameLaptop={['Razer Blade 18 Models ']}
+              laptopComponent={
+                'NVIDIA® GeForce RTX™ 40 Series 18” Laptop with 13th Gen Intel® Core™ i9 Processor (24-Core)'
+              }
+              colorOption={'Now available in a sleek mercury or matte black finish.'}
+              imageProducts={[
+                {
+                  src: '/images/images-product/laptopimg4.png',
+                  alt: 'product 4',
+                },
+              ]}
+              price={'2,899.99'}
+            />
+          </SwiperSlide>
+        </Swiper>
       </div>
 
       {/* //Carousel banner */}
@@ -111,76 +135,94 @@ const Laptop = () => {
       </div>
 
       {/* GEFORCE RTX™ 30 SERIES LAPTOPS */}
-      <div className='mt-[20px] ml-[6rem]'>
+      <div className="mt-[20px] ml-[6rem]">
         <h2 className="font-bold text-white text-2xl">GEFORCE RTX™ 30 SERIES LAPTOPS</h2>
         <p className="text-[#777] font-semibold text-xl">
           Discover our newest Razer Blades featuring the latest NVIDIA graphics cards, Intel, and AMD processors
         </p>
       </div>
 
-      <div className="flex flex-row justify-evenly mt-[20px]">
-        <LaptopCard
-          nameLaptop={'Razer Blade 14 Models '}
-          laptopComponent={'NVIDIA® GeForce RTX™ 40 Series 14” Laptop with AMD Ryzen 9 7940HS Processor'}
-          colorOption={'Now available in a sleek mercury or matte black finish.'}
-          imageProducts={[
-            {
-              src: '/images/images-product/laptopimg1.png',
-              alt: 'product 1',
-            },
-          ]}
-          price={'2,399.99'}
-          salePrice={'2,399.99'}
-          salePercentage={20}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Blade 15 Models '}
-          laptopComponent={
-            'NVIDIA® GeForce RTX™ 40 Series 15” Laptop with 13th Gen Intel® Core™ i7 Processor (14-Core)'
-          }
-          colorOption={'Now available in a sleek mercury or matte black finish.'}
-          imageProducts={[
-            {
-              src: '/images/images-product/laptopimg2.png',
-              alt: 'product 2',
-            },
-          ]}
-          price={'2,499.99'}
-          salePrice={'2,399.99'}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Blade 16 Models '}
-          laptopComponent={
-            'NVIDIA® GeForce RTX™ 40 Series 16” Laptop with 13th Gen Intel® Core™ i9 Processor (24-Core)'
-          }
-          colorOption={'Now available in a sleek mercury or matte black finish.'}
-          imageProducts={[
-            {
-              src: '/images/images-product/laptopimg3.png',
-              alt: 'product 3',
-            },
-          ]}
-          price={'2,699.99'}
-          salePrice={'2,399.99'}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Blade 18 Models '}
-          laptopComponent={
-            'NVIDIA® GeForce RTX™ 40 Series 18” Laptop with 13th Gen Intel® Core™ i9 Processor (24-Core)'
-          }
-          colorOption={'Now available in a sleek mercury or matte black finish.'}
-          imageProducts={[
-            {
-              src: '/images/images-product/laptopimg4.png',
-              alt: 'product 4',
-            },
-          ]}
-          price={'2,899.99'}
-          salePrice={'2,399.99'}
-        />
+      <div className="flex flex-row mt-[20px] justify-start ml-[6rem]">
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={0}
+          navigation={{
+            enabled: true,
+          }}
+          modules={[Navigation]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Blade 14 Models ']}
+              laptopComponent={'NVIDIA® GeForce RTX™ 40 Series 14” Laptop with AMD Ryzen 9 7940HS Processor'}
+              colorOption={'Now available in a sleek mercury or matte black finish.'}
+              imageProducts={[
+                {
+                  src: '/images/images-product/laptopimg1.png',
+                  alt: 'product 1',
+                },
+              ]}
+              price={'2,399.99'}
+              salePrice={'2,399.99'}
+              salePercentage={20}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Blade 15 Models ']}
+              laptopComponent={
+                'NVIDIA® GeForce RTX™ 40 Series 15” Laptop with 13th Gen Intel® Core™ i7 Processor (14-Core)'
+              }
+              colorOption={'Now available in a sleek mercury or matte black finish.'}
+              imageProducts={[
+                {
+                  src: '/images/images-product/laptopimg2.png',
+                  alt: 'product 2',
+                },
+              ]}
+              price={'2,499.99'}
+              salePrice={'2,399.99'}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <LaptopCard
+              nameLaptop={['Razer Blade 16 Models ']}
+              laptopComponent={
+                'NVIDIA® GeForce RTX™ 40 Series 16” Laptop with 13th Gen Intel® Core™ i9 Processor (24-Core)'
+              }
+              colorOption={'Now available in a sleek mercury or matte black finish.'}
+              imageProducts={[
+                {
+                  src: '/images/images-product/laptopimg3.png',
+                  alt: 'product 3',
+                },
+              ]}
+              price={'2,699.99'}
+              salePrice={'2,399.99'}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Blade 18 Models ']}
+              laptopComponent={
+                'NVIDIA® GeForce RTX™ 40 Series 18” Laptop with 13th Gen Intel® Core™ i9 Processor (24-Core)'
+              }
+              colorOption={'Now available in a sleek mercury or matte black finish.'}
+              imageProducts={[
+                {
+                  src: '/images/images-product/laptopimg4.png',
+                  alt: 'product 4',
+                },
+              ]}
+              price={'2,899.99'}
+              salePrice={'2,399.99'}
+            />
+          </SwiperSlide>
+        </Swiper>
       </div>
 
       {/* option */}

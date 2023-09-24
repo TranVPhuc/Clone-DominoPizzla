@@ -24,12 +24,14 @@
     color: #fff;
 }
 
+.cancel,
 .search,
 .cart{
     color: gray;
     font-size: 1.3rem;
 }
 
+.cancel:hover,
 .search:hover,
 .cart:hover{
     color: #fff;
@@ -44,3 +46,4 @@
     color: #fff;
     font-size: 0.85rem;
 }
+

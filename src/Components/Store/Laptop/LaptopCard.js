@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
+import './LaptopCard.css'
 const LaptopCard = ({price, exclusive,itemNew, salePrice,salePercentage, nameLaptop, laptopComponent, colorOption,colorOption2, imageProducts = [] }) => {
-
+  const [index,setIndex] = useState(0);
   return (
-    <div>
+    <div className="h-full">
       <div class="flex h-full flex-col max-w-xs max-h rounded overflow-hidden shadow-lg relative mr-[2rem]">
-        <Carousel>
+        <Carousel
+          onSelect={(eventKey) => {
+            setIndex(eventKey);
+          }}
+        >
           {imageProducts?.map((image, index) => {
             return (
               <Carousel.Item>
@@ -16,7 +21,7 @@ const LaptopCard = ({price, exclusive,itemNew, salePrice,salePercentage, nameLap
           })}
         </Carousel>
         <div class="flex-auto flex flex-col justify-between px-6 py-4 bg-[#222]">
-          <div class="font-normal text-xl text-white mb-2">{nameLaptop}</div>
+          <div class="font-normal text-xl text-white mb-2">{nameLaptop[index]}</div>
           <p class="text-[#444] text-base">{laptopComponent}</p>
           <p className="text-white">{colorOption}</p>
           <p className="text-white">{colorOption2}</p>
@@ -25,7 +30,7 @@ const LaptopCard = ({price, exclusive,itemNew, salePrice,salePercentage, nameLap
               <span className="text-white">{price && `US$ ${price}`}</span>
               <span className="text-white line-through block">{salePrice && `US$ ${salePrice}`}</span>
             </div>
-            <Button className="bg-[#44d62c]">BUY</Button>
+            <Button className="button">BUY</Button>
           </div>
         </div>
 

@@ -1,5 +1,11 @@
-import React from 'react'
-import LaptopCard from '../Laptop/LaptopCard'
+import React from 'react';
+import LaptopCard from '../Laptop/LaptopCard';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Navigation } from 'swiper/modules';
+import './Swiper.css';
+
 const Console = () => {
   return (
     <div className="bg-black mt-[-16px] pb-[25px]">
@@ -15,44 +21,60 @@ const Console = () => {
         </p>
       </div>
       <div className="flex flex-row justify-start ml-[6rem]">
-        <LaptopCard
-          nameLaptop={'Razer Kitsune'}
-          laptopComponent={'All-Button Optical Arcade Controller for PS5™ and PC'}
-          price={'299.99'}
-          itemNew={'NEW'}
-          imageProducts={[
-            {
-              src: '/images/console-page-img/console1.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Kitsune - SF6 Cammy Edition'}
-          laptopComponent={'All-Button Optical Arcade Controller for PS5™ and PC'}
-          price={'329.99'}
-          itemNew={'NEW'}
-          imageProducts={[
-            {
-              src: '/images/console-page-img/console2.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Kitsune - SF6 Chun-Li Edition'}
-          laptopComponent={'Razer Kitsune - SF6 Chun-Li Edition'}
-          price={'329.99'}
-          itemNew={'NEW'}
-          imageProducts={[
-            {
-              src: '/images/console-page-img/console3.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
+        <Swiper
+          slidesPerView={3}
+          spaceBetween={0}
+          navigation={{
+            enabled: true,
+          }}
+          modules={[Navigation]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Kitsune']}
+              laptopComponent={'All-Button Optical Arcade Controller for PS5™ and PC'}
+              price={'299.99'}
+              itemNew={'NEW'}
+              imageProducts={[
+                {
+                  src: '/images/console-page-img/console1.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <LaptopCard
+              nameLaptop={['Razer Kitsune - SF6 Cammy Edition']}
+              laptopComponent={'All-Button Optical Arcade Controller for PS5™ and PC'}
+              price={'329.99'}
+              itemNew={'NEW'}
+              imageProducts={[
+                {
+                  src: '/images/console-page-img/console2.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Kitsune - SF6 Chun-Li Edition']}
+              laptopComponent={'Razer Kitsune - SF6 Chun-Li Edition'}
+              price={'329.99'}
+              itemNew={'NEW'}
+              imageProducts={[
+                {
+                  src: '/images/console-page-img/console3.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+        </Swiper>
       </div>
 
       {/* Earbuds */}
@@ -64,43 +86,60 @@ const Console = () => {
       </div>
 
       <div className="flex flex-row justify-start ml-[6rem]">
-        <LaptopCard
-          nameLaptop={'Razer Hammerhead Pro HyperSpeed'}
-          laptopComponent={
-            'True Wireless Gaming Earbuds with Razer™ HyperSpeed Wireless, Razer Chroma™ RGB, and Bluetooth 5.3'
-          }
-          price={'199.99'}
-          imageProducts={[
-            {
-              src: '/images/console-page-img/earbud1.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Hammerhead HyperSpeed - PlayStation Licensed - PlayStation Licensed'}
-          laptopComponent={'Wireless Multi-Platform Gaming Earbuds'}
-          price={'149.99'}
-          imageProducts={[
-            {
-              src: '/images/console-page-img/earbud2.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Hammerhead HyperSpeed - Xbox Licensed - Xbox Licensed'}
-          laptopComponent={'Wireless Multi-Platform Gaming EarbudsC'}
-          price={'149.99'}
-          imageProducts={[
-            {
-              src: '/images/console-page-img/earbud3.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
+        <Swiper
+          slidesPerView={3}
+          spaceBetween={0}
+          navigation={{
+            enabled: true,
+          }}
+          modules={[Navigation]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Hammerhead Pro HyperSpeed']}
+              laptopComponent={
+                'True Wireless Gaming Earbuds with Razer™ HyperSpeed Wireless, Razer Chroma™ RGB, and Bluetooth 5.3'
+              }
+              price={'199.99'}
+              imageProducts={[
+                {
+                  src: '/images/console-page-img/earbud1.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Hammerhead HyperSpeed - PlayStation Licensed - PlayStation Licensed']}
+              laptopComponent={'Wireless Multi-Platform Gaming Earbuds'}
+              price={'149.99'}
+              imageProducts={[
+                {
+                  src: '/images/console-page-img/earbud2.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Hammerhead HyperSpeed - Xbox Licensed - Xbox Licensed']}
+              laptopComponent={'Wireless Multi-Platform Gaming EarbudsC'}
+              price={'149.99'}
+              imageProducts={[
+                {
+                  src: '/images/console-page-img/earbud3.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+        </Swiper>
       </div>
       {/* Controller */}
       <div className="ml-[6rem] mt-[2rem]">
@@ -111,53 +150,71 @@ const Console = () => {
       </div>
 
       <div className="flex flex-row justify-start ml-[6rem]">
-        <LaptopCard
-          nameLaptop={'Razer Wolverine V2 Pro - Black - Black'}
-          laptopComponent={'Wireless Pro Gaming Controller for PS5™ Consoles and PC'}
-          price={'199.99'}
-          imageProducts={[
-            {
-              src: '/images/console-page-img/controller1.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Wolverine V2 Pro - White - White'}
-          laptopComponent={'Wireless Pro Gaming Controller for PS5™ Consoles and PC'}
-          price={'149.99'}
-          imageProducts={[
-            {
-              src: '/images/console-page-img/controller2.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Wolverine V2 Chroma - Black - Black'}
-          laptopComponent={'Xbox Series X|S Controller with Razer Chroma™ RGB'}
-          price={'149.99'}
-          imageProducts={[
-            {
-              src: '/images/console-page-img/controller3.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Wolverine V2 Chroma - White - White'}
-          laptopComponent={'Xbox Series X|S Controller with Razer Chroma™ RGB'}
-          price={'149.99'}
-          imageProducts={[
-            {
-              src: '/images/console-page-img/controller4.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={0}
+          navigation={{
+            enabled: true,
+          }}
+          modules={[Navigation]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Wolverine V2 Pro - Black - Black']}
+              laptopComponent={'Wireless Pro Gaming Controller for PS5™ Consoles and PC'}
+              price={'199.99'}
+              imageProducts={[
+                {
+                  src: '/images/console-page-img/controller1.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Wolverine V2 Pro - White - White']}
+              laptopComponent={'Wireless Pro Gaming Controller for PS5™ Consoles and PC'}
+              price={'149.99'}
+              imageProducts={[
+                {
+                  src: '/images/console-page-img/controller2.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Wolverine V2 Chroma - Black - Black']}
+              laptopComponent={'Xbox Series X|S Controller with Razer Chroma™ RGB'}
+              price={'149.99'}
+              imageProducts={[
+                {
+                  src: '/images/console-page-img/controller3.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <LaptopCard
+              nameLaptop={['Razer Wolverine V2 Chroma - White - White']}
+              laptopComponent={'Xbox Series X|S Controller with Razer Chroma™ RGB'}
+              price={'149.99'}
+              imageProducts={[
+                {
+                  src: '/images/console-page-img/controller4.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+        </Swiper>
       </div>
 
       {/* Collab */}
@@ -169,55 +226,73 @@ const Console = () => {
       </div>
 
       <div className="flex flex-row justify-start ml-[6rem]">
-        <LaptopCard
-          nameLaptop={'Razer Wireless Controller & Quick Charging Stand for Xbox Razer Limited Edition'}
-          laptopComponent={'Officially Licensed Xbox Controller and Quick Charging Stand'}
-          price={'199.99'}
-          exclusive={'EXCLUSIVE'}
-          imageProducts={[
-            {
-              src: '/images/console-page-img/collab1.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Universal Quick Charging Stand for Xbox - Forza Horizon 5 Limited Edition'}
-          laptopComponent={'Quick Charging Stand for Xbox Wireless Controllers'}
-          price={'149.99'}
-          imageProducts={[
-            {
-              src: '/images/console-page-img/collab2.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Universal Quick Charging Stand for Xbox - Xbox 20th Anniversary Limited Edition'}
-          laptopComponent={'Quick Charging Stand for Xbox Wireless Controllers'}
-          price={'149.99'}
-          imageProducts={[
-            {
-              src: '/images/console-page-img/collab3.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Sonic the Hedgehog Razer Wireless Controller & Quick Charging Stand for Xbox'}
-          laptopComponent={'Officially Licensed Xbox Controller and Quick Charging Stand'}
-          price={'149.99'}
-          exclusive={'EXCLUSIVE'}
-          imageProducts={[
-            {
-              src: '/images/console-page-img/collab4.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={0}
+          navigation={{
+            enabled: true,
+          }}
+          modules={[Navigation]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            <LaptopCard
+              nameLaptop={['Razer Wireless Controller & Quick Charging Stand for Xbox Razer Limited Edition']}
+              laptopComponent={'Officially Licensed Xbox Controller and Quick Charging Stand'}
+              price={'199.99'}
+              exclusive={'EXCLUSIVE'}
+              imageProducts={[
+                {
+                  src: '/images/console-page-img/collab1.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Universal Quick Charging Stand for Xbox - Forza Horizon 5 Limited Edition']}
+              laptopComponent={'Quick Charging Stand for Xbox Wireless Controllers'}
+              price={'149.99'}
+              imageProducts={[
+                {
+                  src: '/images/console-page-img/collab2.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Universal Quick Charging Stand for Xbox - Xbox 20th Anniversary Limited Edition']}
+              laptopComponent={'Quick Charging Stand for Xbox Wireless Controllers'}
+              price={'149.99'}
+              imageProducts={[
+                {
+                  src: '/images/console-page-img/collab3.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Sonic the Hedgehog Razer Wireless Controller & Quick Charging Stand for Xbox']}
+              laptopComponent={'Officially Licensed Xbox Controller and Quick Charging Stand'}
+              price={'149.99'}
+              exclusive={'EXCLUSIVE'}
+              imageProducts={[
+                {
+                  src: '/images/console-page-img/collab4.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+        </Swiper>
       </div>
 
       {/* Quick charge */}
@@ -227,53 +302,70 @@ const Console = () => {
       </div>
 
       <div className="flex flex-row justify-start ml-[6rem]">
-        <LaptopCard
-          nameLaptop={'Razer Universal Quick Charging Stand for Xbox - Velocity Green'}
-          laptopComponent={'Quick Charger for Xbox Controllers'}
-          price={'199.99'}
-          imageProducts={[
-            {
-              src: '/images/console-page-img/stand1.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Universal Quick Charging Stand for Xbox - Lunar Shift'}
-          laptopComponent={'Quick Charger for Xbox Controllers'}
-          price={'149.99'}
-          imageProducts={[
-            {
-              src: '/images/console-page-img/stand2.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Universal Quick Charging Stand for Xbox - Xbox 20th Anniversary Limited Edition'}
-          laptopComponent={'Quick Charger for Xbox Controllers'}
-          price={'149.99'}
-          imageProducts={[
-            {
-              src: '/images/console-page-img/stand3.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Quick Charging Stand for PS5™ - Pink'}
-          laptopComponent={'Quick Charging Stand for PS5™ DualSense™ Wireless Controller'}
-          price={'149.99'}
-          imageProducts={[
-            {
-              src: '/images/console-page-img/stand4.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={0}
+          navigation={{
+            enabled: true,
+          }}
+          modules={[Navigation]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Universal Quick Charging Stand for Xbox - Velocity Green']}
+              laptopComponent={'Quick Charger for Xbox Controllers'}
+              price={'199.99'}
+              imageProducts={[
+                {
+                  src: '/images/console-page-img/stand1.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <LaptopCard
+              nameLaptop={['Razer Universal Quick Charging Stand for Xbox - Lunar Shift']}
+              laptopComponent={'Quick Charger for Xbox Controllers'}
+              price={'149.99'}
+              imageProducts={[
+                {
+                  src: '/images/console-page-img/stand2.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <LaptopCard
+              nameLaptop={['Razer Universal Quick Charging Stand for Xbox - Xbox 20th Anniversary Limited Edition']}
+              laptopComponent={'Quick Charger for Xbox Controllers'}
+              price={'149.99'}
+              imageProducts={[
+                {
+                  src: '/images/console-page-img/stand3.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <LaptopCard
+              nameLaptop={['Razer Quick Charging Stand for PS5™ - Pink']}
+              laptopComponent={'Quick Charging Stand for PS5™ DualSense™ Wireless Controller'}
+              price={'149.99'}
+              imageProducts={[
+                {
+                  src: '/images/console-page-img/stand4.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+        </Swiper>
       </div>
 
       {/* Meta Gear */}
@@ -283,45 +375,59 @@ const Console = () => {
       </div>
 
       <div className="flex flex-row justify-start ml-[6rem]">
-        <LaptopCard
-          nameLaptop={
-            'Razer Universal Quick Charging Stand for Xbox - Velocity GreenRazer Facial Interface and Adjustable Head Strap System Authorized for Meta Quest 2'
-          }
-          price={'199.99'}
-          imageProducts={[
-            {
-              src: '/images/console-page-img/metagear1.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Adjustable Head Strap System Authorized for Meta Quest 2'}
-          laptopComponent={'Ergonomic VR Head Strap System'}
-          price={'149.99'}
-          imageProducts={[
-            {
-              src: '/images/console-page-img/metagear2.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
-
-        <LaptopCard
-          nameLaptop={'Razer Facial Interface Authorized for Meta Quest 2'}
-          laptopComponent={'Universal Silicone VR Face Cushion with Cooling Vents'}
-          price={'149.99'}
-          imageProducts={[
-            {
-              src: '/images/console-page-img/metagear3.png',
-              alt: 'product 1',
-            },
-          ]}
-        />
+        <Swiper
+          slidesPerView={3}
+          spaceBetween={0}
+          navigation={{
+            enabled: true,
+          }}
+          modules={[Navigation]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            <LaptopCard
+              nameLaptop={[
+                'Razer Universal Quick Charging Stand for Xbox - Velocity GreenRazer Facial Interface and Adjustable Head Strap System Authorized for Meta Quest 2',
+              ]}
+              price={'199.99'}
+              imageProducts={[
+                {
+                  src: '/images/console-page-img/metagear1.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <LaptopCard
+              nameLaptop={['Razer Adjustable Head Strap System Authorized for Meta Quest 2']}
+              laptopComponent={'Ergonomic VR Head Strap System'}
+              price={'149.99'}
+              imageProducts={[
+                {
+                  src: '/images/console-page-img/metagear2.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <LaptopCard
+              nameLaptop={['Razer Facial Interface Authorized for Meta Quest 2']}
+              laptopComponent={'Universal Silicone VR Face Cushion with Cooling Vents'}
+              price={'149.99'}
+              imageProducts={[
+                {
+                  src: '/images/console-page-img/metagear3.png',
+                  alt: 'product 1',
+                },
+              ]}
+            />
+          </SwiperSlide>
+        </Swiper>
       </div>
     </div>
   );
-}
+};
 
-export default Console
+export default Console;
