@@ -1,6 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Link, Navigate, Route, Routes, useNavigate } from 'react-router-dom';
-import { LaptopOutlined, MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons';
+import {
+  AudioOutlined,
+  EditOutlined,
+  LaptopOutlined,
+  MenuFoldOutlined,
+  MenuUnfoldOutlined,
+  MobileOutlined,
+  ShoppingCartOutlined,
+  SkinOutlined,
+} from '@ant-design/icons';
 import './fontawesome-free-6.4.0-web/css/all.min.css';
 import { Layout, Menu, Button, theme, Avatar } from 'antd';
 import './Admin.css';
@@ -14,6 +23,7 @@ import Console from '../pages/Console/Console';
 import Mobile from '../pages/Mobile/Mobile';
 import Apparel from '../pages/Apparel/Apparel';
 import ContentCreation from '../pages/contentCreation/ContentCreation';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const { Header, Sider, Content } = Layout;
 const Admin = (props) => {
@@ -28,7 +38,7 @@ const Admin = (props) => {
     },
     {
       key: 'allproduct',
-      icon: <i class="fa-solid fa-cart-shopping"></i>,
+      icon: <ShoppingCartOutlined />,
       label: 'All Products',
     },
     {
@@ -38,42 +48,42 @@ const Admin = (props) => {
     },
     {
       key: 'mice',
-      icon: <i class="fa-sharp fa-solid fa-computer-mouse"></i>,
+      icon: <FontAwesomeIcon icon="fa-sharp fa-solid fa-computer-mouse" />,
       label: 'Mice',
     },
     {
       key: 'chair',
-      icon: <i class="fa-sharp fa-solid fa-chair"></i>,
+      icon: <FontAwesomeIcon icon="fa-sharp fa-solid fa-chair" />,
       label: 'Chair',
     },
     {
       key: 'keyboard',
-      icon: <i class="fa-solid fa-keyboard"></i>,
+      icon: <FontAwesomeIcon icon="fa-regular fa-keyboard" />,
       label: 'Keyboard',
     },
     {
       key: 'audio',
-      icon: <i class="fa-solid fa-headphones"></i>,
+      icon: <AudioOutlined />,
       label: 'Audio',
     },
     {
       key: 'console',
-      icon: <i class="fa-solid fa-game-console-handheld"></i>,
+      icon: <FontAwesomeIcon icon="fa-sharp fa-solid fa-game-console-handheld" />,
       label: 'Console',
     },
     {
       key: 'mobile',
-      icon: <i class="fa-solid fa-mobile"></i>,
+      icon: <MobileOutlined />,
       label: 'Mobile',
     },
     {
       key: 'apparel',
-      icon: <i class="fa-solid fa-shirt"></i>,
+      icon: <SkinOutlined />,
       label: 'Apparel',
     },
     {
       key: 'content',
-      icon: <i class="fa-solid fa-paintbrush-pencil"></i>,
+      icon: <EditOutlined />,
       label: 'Content Creation',
     },
   ];
