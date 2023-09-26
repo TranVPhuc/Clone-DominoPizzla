@@ -4,12 +4,11 @@ import { Avatar } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import { useFormik } from 'formik';
 import FormItem from 'antd/es/form/FormItem';
-import axiosInstance from './configAPI';
+import axiosInstance from './configKeyboardAPI';
 
 const { Column, ColumnGroup } = Table;
 const { Search } = Input;
-
-const AllProducts = () => {
+const Keyboard = () => {
   const [productList, setProductList] = useState([]);
 
   let dataProduct = productList.filter((product, index) => index < 5);
@@ -36,7 +35,7 @@ const AllProducts = () => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const { data: response } = await axiosInstance.get('laptops');
+      const { data: response } = await axiosInstance.get('keyboards');
       console.log(response.items);
       setProductList(response.items);
       productListData.current = response.items;
@@ -62,7 +61,7 @@ const AllProducts = () => {
   const handleDeleteProduct = async (product) => {
     try {
       console.log(product._uuid);
-      const { data: response } = await axiosInstance.delete(`laptops/${product._uuid}`);
+      const { data: response } = await axiosInstance.delete(`keyboards/${product._uuid}`);
       setSuccessAPI(true);
       console.log(response.items);
     } catch (error) {
@@ -80,7 +79,7 @@ const AllProducts = () => {
     onSubmit: async (values, { resetForm }) => {
       if (dataDetail) {
         try {
-          const { data: response } = await axiosInstance.put('laptops', [
+          const { data: response } = await axiosInstance.put('keyboards', [
             {
               ...dataDetail,
               imageProduct: values.productImageLink,
@@ -98,7 +97,7 @@ const AllProducts = () => {
         }
       } else {
         try {
-          const { data: response } = await axiosInstance.post('laptops', [
+          const { data: response } = await axiosInstance.post('keyboards', [
             {
               imageProduct: values.productImageLink,
               nameLaptop: [values.productName],
@@ -144,7 +143,6 @@ const AllProducts = () => {
       setSuccessAPI(false);
     }
   }, [successAPI]); //kiem tra api da goi thanh cong hay khong
-
   return (
     <div>
       <div className="mb-[10px]">
@@ -330,4 +328,4 @@ const AllProducts = () => {
   );
 };
 
-export default AllProducts;
+export default Keyboard;

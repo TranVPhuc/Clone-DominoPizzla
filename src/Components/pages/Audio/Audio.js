@@ -4,12 +4,12 @@ import { Avatar } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import { useFormik } from 'formik';
 import FormItem from 'antd/es/form/FormItem';
-import axiosInstance from './configAPI';
+import axiosInstance from './configAudioAPI';
 
 const { Column, ColumnGroup } = Table;
 const { Search } = Input;
 
-const AllProducts = () => {
+const Audio = () => {
   const [productList, setProductList] = useState([]);
 
   let dataProduct = productList.filter((product, index) => index < 5);
@@ -36,7 +36,7 @@ const AllProducts = () => {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const { data: response } = await axiosInstance.get('laptops');
+      const { data: response } = await axiosInstance.get('audios');
       console.log(response.items);
       setProductList(response.items);
       productListData.current = response.items;
@@ -62,7 +62,7 @@ const AllProducts = () => {
   const handleDeleteProduct = async (product) => {
     try {
       console.log(product._uuid);
-      const { data: response } = await axiosInstance.delete(`laptops/${product._uuid}`);
+      const { data: response } = await axiosInstance.delete(`audios/${product._uuid}`);
       setSuccessAPI(true);
       console.log(response.items);
     } catch (error) {
@@ -80,7 +80,7 @@ const AllProducts = () => {
     onSubmit: async (values, { resetForm }) => {
       if (dataDetail) {
         try {
-          const { data: response } = await axiosInstance.put('laptops', [
+          const { data: response } = await axiosInstance.put('audios', [
             {
               ...dataDetail,
               imageProduct: values.productImageLink,
@@ -98,7 +98,7 @@ const AllProducts = () => {
         }
       } else {
         try {
-          const { data: response } = await axiosInstance.post('laptops', [
+          const { data: response } = await axiosInstance.post('audios', [
             {
               imageProduct: values.productImageLink,
               nameLaptop: [values.productName],
@@ -330,4 +330,4 @@ const AllProducts = () => {
   );
 };
 
-export default AllProducts;
+export default Audio;

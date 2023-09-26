@@ -61,7 +61,10 @@ const Navbar = () => {
             )}
 
             <i className="fa-solid fa-magnifying-glass search" onClick={() => setInputSearch(true)} />
-            <i className="fa-regular fa-cart-shopping cart" />
+            <Link to="/adminpage">
+              {' '}
+              <i className="fa-regular fa-cart-shopping cart" />
+            </Link>
           </div>
         </nav>
       </div>

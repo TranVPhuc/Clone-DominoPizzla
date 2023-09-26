@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import LaptopCard from './LaptopCard';
 import Carousel from 'react-bootstrap/Carousel';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -6,8 +6,35 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import './Swiper.css';
+import axiosInstance from './configLaptopAPI';
 
 const Laptop = () => {
+  const [productList, setProductList] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      // setLoading(true);
+      try {
+        const { data: response } = await axiosInstance.get('laptops');
+        setProductList(response.items);
+      } catch (error) {
+        console.error(error.message);
+      }
+      // setLoading(false);
+    };
+
+    fetchData();
+  }, []);
+
+  console.log(
+    productList.map((product) => ({
+      1: product.nameLaptop,
+      2: product.imageProduct,
+      3: product.latopComponent,
+      4: product.colorOption,
+      5: product.price,
+    })),
+  );
   return (
     <div className="bg-black mt-[-16px] pb-[25px]">
       <div className="ml-[6rem]">
@@ -22,7 +49,7 @@ const Laptop = () => {
       </div>
 
       {/* GTX 40 series */}
-      <div className="flex flex-row justify-start ml-[6rem]">
+      <div className=" ml-[6rem]">
         <Swiper
           slidesPerView={4}
           spaceBetween={0}
@@ -32,71 +59,20 @@ const Laptop = () => {
           modules={[Navigation]}
           className="mySwiper"
         >
-          <SwiperSlide>
-            <LaptopCard
-              nameLaptop={['Razer Blade 14 Models ']}
-              laptopComponent={'NVIDIA® GeForce RTX™ 40 Series 14” Laptop with AMD Ryzen 9 7940HS Processor'}
-              colorOption={''}
-              imageProducts={[
-                {
-                  src: '/images/images-product/laptopimg1.png',
-                  alt: 'product 1',
-                },
-              ]}
-              price={'2,399.99'}
-            />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <LaptopCard
-              nameLaptop={['Razer Blade 15 Models ']}
-              laptopComponent={
-                'NVIDIA® GeForce RTX™ 40 Series 15” Laptop with 13th Gen Intel® Core™ i7 Processor (14-Core)'
-              }
-              colorOption={'Now available in a sleek mercury or matte black finish.'}
-              imageProducts={[
-                {
-                  src: '/images/images-product/laptopimg2.png',
-                  alt: 'product 2',
-                },
-              ]}
-              price={'2,499.99'}
-            />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <LaptopCard
-              nameLaptop={['Razer Blade 16 Models ']}
-              laptopComponent={
-                'NVIDIA® GeForce RTX™ 40 Series 16” Laptop with 13th Gen Intel® Core™ i9 Processor (24-Core)'
-              }
-              colorOption={'Now available in a sleek mercury or matte black finish.'}
-              imageProducts={[
-                {
-                  src: '/images/images-product/laptopimg3.png',
-                  alt: 'product 3',
-                },
-              ]}
-              price={'2,699.99'}
-            />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <LaptopCard
-              nameLaptop={['Razer Blade 18 Models ']}
-              laptopComponent={
-                'NVIDIA® GeForce RTX™ 40 Series 18” Laptop with 13th Gen Intel® Core™ i9 Processor (24-Core)'
-              }
-              colorOption={'Now available in a sleek mercury or matte black finish.'}
-              imageProducts={[
-                {
-                  src: '/images/images-product/laptopimg4.png',
-                  alt: 'product 4',
-                },
-              ]}
-              price={'2,899.99'}
-            />
-          </SwiperSlide>
+          {productList.map(
+            (product, index) =>
+              index >= 4 && (
+                <SwiperSlide>
+                  <LaptopCard
+                    nameLaptop={product.nameLaptop}
+                    imageProducts={product.imageProduct}
+                    laptopComponent={product.latopComponent}
+                    colorOption={product.colorOption}
+                    price={product.price}
+                  />
+                </SwiperSlide>
+              ),
+          )}
         </Swiper>
       </div>
 
@@ -142,7 +118,7 @@ const Laptop = () => {
         </p>
       </div>
 
-      <div className="flex flex-row mt-[20px] justify-start ml-[6rem]">
+      <div className="flex flex-row justify-start ml-[6rem]">
         <Swiper
           slidesPerView={4}
           spaceBetween={0}
@@ -152,76 +128,20 @@ const Laptop = () => {
           modules={[Navigation]}
           className="mySwiper"
         >
-          <SwiperSlide>
-            {' '}
-            <LaptopCard
-              nameLaptop={['Razer Blade 14 Models ']}
-              laptopComponent={'NVIDIA® GeForce RTX™ 40 Series 14” Laptop with AMD Ryzen 9 7940HS Processor'}
-              colorOption={'Now available in a sleek mercury or matte black finish.'}
-              imageProducts={[
-                {
-                  src: '/images/images-product/laptopimg1.png',
-                  alt: 'product 1',
-                },
-              ]}
-              price={'2,399.99'}
-              salePrice={'2,399.99'}
-              salePercentage={20}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            {' '}
-            <LaptopCard
-              nameLaptop={['Razer Blade 15 Models ']}
-              laptopComponent={
-                'NVIDIA® GeForce RTX™ 40 Series 15” Laptop with 13th Gen Intel® Core™ i7 Processor (14-Core)'
-              }
-              colorOption={'Now available in a sleek mercury or matte black finish.'}
-              imageProducts={[
-                {
-                  src: '/images/images-product/laptopimg2.png',
-                  alt: 'product 2',
-                },
-              ]}
-              price={'2,499.99'}
-              salePrice={'2,399.99'}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <LaptopCard
-              nameLaptop={['Razer Blade 16 Models ']}
-              laptopComponent={
-                'NVIDIA® GeForce RTX™ 40 Series 16” Laptop with 13th Gen Intel® Core™ i9 Processor (24-Core)'
-              }
-              colorOption={'Now available in a sleek mercury or matte black finish.'}
-              imageProducts={[
-                {
-                  src: '/images/images-product/laptopimg3.png',
-                  alt: 'product 3',
-                },
-              ]}
-              price={'2,699.99'}
-              salePrice={'2,399.99'}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            {' '}
-            <LaptopCard
-              nameLaptop={['Razer Blade 18 Models ']}
-              laptopComponent={
-                'NVIDIA® GeForce RTX™ 40 Series 18” Laptop with 13th Gen Intel® Core™ i9 Processor (24-Core)'
-              }
-              colorOption={'Now available in a sleek mercury or matte black finish.'}
-              imageProducts={[
-                {
-                  src: '/images/images-product/laptopimg4.png',
-                  alt: 'product 4',
-                },
-              ]}
-              price={'2,899.99'}
-              salePrice={'2,399.99'}
-            />
-          </SwiperSlide>
+          {productList.map(
+            (product, index) =>
+              index < 4 && (
+                <SwiperSlide>
+                  <LaptopCard
+                    nameLaptop={product.nameLaptop}
+                    imageProducts={product.imageProduct}
+                    laptopComponent={product.latopComponent}
+                    colorOption={product.colorOption}
+                    price={product.price}
+                  />
+                </SwiperSlide>
+              ),
+          )}
         </Swiper>
       </div>
 

@@ -1,9 +1,20 @@
 import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
-import './LaptopCard.css'
-const LaptopCard = ({price, exclusive,itemNew, salePrice,salePercentage, nameLaptop, laptopComponent, colorOption,colorOption2, imageProducts = [] }) => {
-  const [index,setIndex] = useState(0);
+import './LaptopCard.css';
+const LaptopCard = ({
+  price,
+  exclusive,
+  itemNew,
+  salePrice,
+  salePercentage,
+  nameLaptop,
+  laptopComponent,
+  colorOption,
+  colorOption2,
+  imageProducts = [],
+}) => {
+  const [index, setIndex] = useState(0);
   return (
     <div className="h-full">
       <div class="flex h-full flex-col max-w-xs max-h rounded overflow-hidden shadow-lg relative mr-[2rem]">
@@ -15,7 +26,7 @@ const LaptopCard = ({price, exclusive,itemNew, salePrice,salePercentage, nameLap
           {imageProducts?.map((image, index) => {
             return (
               <Carousel.Item>
-                <img class="w-full bg-[#111]" src={image.src} alt={image.alt} />
+                <img src={image.src ? image.src : image} alt="" class="w-full bg-[#111]" />
               </Carousel.Item>
             );
           })}
