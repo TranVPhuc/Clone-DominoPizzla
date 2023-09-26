@@ -17,8 +17,6 @@ const ProductDetail = () => {
       setLoading(true);
       try {
         const { data: response } = await axiosInstance.get(`laptops/`);
-        console.log(response.items);
-        setProductList(response.items);
       } catch (error) {
         console.error(error.message);
       }
