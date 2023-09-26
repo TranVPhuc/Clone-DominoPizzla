@@ -21,7 +21,6 @@ const AllProducts = () => {
 
   const handleChange = (value) => {
     setData(dataProduct.filter((data) => (value ? data.tags.includes(value) : data)));
-    console.log(value);
   };
 
   const showModal = () => {
@@ -37,7 +36,7 @@ const AllProducts = () => {
     setLoading(true);
     try {
       const { data: response } = await axiosInstance.get('laptops');
-      console.log(response.items);
+
       setProductList(response.items);
       productListData.current = response.items;
     } catch (error) {
@@ -47,7 +46,7 @@ const AllProducts = () => {
   };
   const handleSearchProduct = (event) => {
     const keyword = event.target.value.toLowerCase();
-    console.log(productList);
+
     const listProductFilter = productList.filter((element) =>
       element.nameLaptop.toString()?.toLowerCase()?.includes(keyword),
     );
@@ -61,10 +60,8 @@ const AllProducts = () => {
 
   const handleDeleteProduct = async (product) => {
     try {
-      console.log(product._uuid);
       const { data: response } = await axiosInstance.delete(`laptops/${product._uuid}`);
       setSuccessAPI(true);
-      console.log(response.items);
     } catch (error) {
       console.error(error.message);
     }
@@ -92,7 +89,6 @@ const AllProducts = () => {
             },
           ]);
           setSuccessAPI(true);
-          console.log(response.items);
         } catch (error) {
           console.error(error.message);
         }
@@ -109,7 +105,6 @@ const AllProducts = () => {
             },
           ]);
           setSuccessAPI(true);
-          console.log(response.items);
         } catch (error) {
           console.error(error.message);
         }
@@ -132,7 +127,6 @@ const AllProducts = () => {
     formik.setFieldValue('key', product.key);
     setIsModalOpen(true);
   };
-  console.log(data?.filter((value) => !value.delete));
 
   useEffect(() => {
     fetchData();

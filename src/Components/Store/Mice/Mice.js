@@ -53,6 +53,7 @@ const Mice = () => {
               (index > 16) & (index <= 20) && (
                 <SwiperSlide>
                   <LaptopCard
+                    uuid={product._uuid}
                     nameLaptop={product.nameLaptop}
                     imageProducts={product.imageProduct}
                     laptopComponent={product.latopComponent}

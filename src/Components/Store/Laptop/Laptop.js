@@ -26,15 +26,6 @@ const Laptop = () => {
     fetchData();
   }, []);
 
-  console.log(
-    productList.map((product) => ({
-      1: product.nameLaptop,
-      2: product.imageProduct,
-      3: product.latopComponent,
-      4: product.colorOption,
-      5: product.price,
-    })),
-  );
   return (
     <div className="bg-black mt-[-16px] pb-[25px]">
       <div className="ml-[6rem]">
@@ -64,6 +55,7 @@ const Laptop = () => {
               index >= 4 && (
                 <SwiperSlide>
                   <LaptopCard
+                    uuid={product._uuid}
                     nameLaptop={product.nameLaptop}
                     imageProducts={product.imageProduct}
                     laptopComponent={product.latopComponent}

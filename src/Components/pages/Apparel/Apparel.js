@@ -20,7 +20,6 @@ const Apparel = () => {
 
   const handleChange = (value) => {
     setData(dataProduct.filter((data) => (value ? data.tags.includes(value) : data)));
-    console.log(value);
   };
 
   const showModal = () => {
@@ -36,7 +35,7 @@ const Apparel = () => {
     setLoading(true);
     try {
       const { data: response } = await axiosInstance.get('apparels');
-      console.log(response.items);
+
       setProductList(response.items);
       productListData.current = response.items;
     } catch (error) {
@@ -46,7 +45,7 @@ const Apparel = () => {
   };
   const handleSearchProduct = (event) => {
     const keyword = event.target.value.toLowerCase();
-    console.log(productList);
+
     const listProductFilter = productList.filter((element) =>
       element.nameLaptop.toString()?.toLowerCase()?.includes(keyword),
     );
@@ -60,10 +59,8 @@ const Apparel = () => {
 
   const handleDeleteProduct = async (product) => {
     try {
-      console.log(product._uuid);
       const { data: response } = await axiosInstance.delete(`apparels/${product._uuid}`);
       setSuccessAPI(true);
-      console.log(response.items);
     } catch (error) {
       console.error(error.message);
     }
@@ -91,7 +88,6 @@ const Apparel = () => {
             },
           ]);
           setSuccessAPI(true);
-          console.log(response.items);
         } catch (error) {
           console.error(error.message);
         }
@@ -108,7 +104,6 @@ const Apparel = () => {
             },
           ]);
           setSuccessAPI(true);
-          console.log(response.items);
         } catch (error) {
           console.error(error.message);
         }
@@ -131,7 +126,6 @@ const Apparel = () => {
     formik.setFieldValue('key', product.key);
     setIsModalOpen(true);
   };
-  console.log(data?.filter((value) => !value.delete));
 
   useEffect(() => {
     fetchData();
