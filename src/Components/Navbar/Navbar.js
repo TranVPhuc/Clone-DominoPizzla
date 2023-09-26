@@ -13,6 +13,7 @@ import Community from '../Community/Community';
 import Support from '../Support/Support';
 import { Input } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Homepage from '../Hompage/Homepage';
 
 const Navbar = () => {
   const [inputSearch, setInputSearch] = useState(false);
@@ -73,6 +74,7 @@ const Navbar = () => {
       </div>
 
       <Routes>
+        <Route path="/" element={<Homepage />} />
         <Route path="/store/*" element={<Store />} />
         <Route path="/pc" element={<PC />} />
         <Route path="/console" element={<Console />} />

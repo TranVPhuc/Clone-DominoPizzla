@@ -14,7 +14,6 @@ function App() {
           element={
             <>
               <Navbar />
-              <Homepage />
               <Footer />
             </>
           }
